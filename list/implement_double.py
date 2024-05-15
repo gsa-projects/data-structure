@@ -9,12 +9,14 @@ class DNode:
     def append(self, node):
         # A, B, C = self, node, self.next
         if node is not None:
-            node.next = self.next   # B -> C 링크
-            node.prev = self    # B -> A 링크
+            node.next = self.next  # B -> C 링크
+            node.prev = self  # B -> A 링크
 
-            if node.next is not None:   # 원래 node.next가 self.next이므로 node.next.prev는 self 였는데 이걸 node로 바꿈
-                node.next.prev = node   # C -> B 링크
-            self.next = node    # A -> B 링크
+            # if self.next is not None:   # 원래 node.next가 self.next이므로 node.next.prev는 self 였는데 이걸 node로 바꿈
+            #     self.next.prev = node  # C -> B 링크
+            if self.next is not None:
+                self.next.prev = node
+            self.next = node  # A -> B 링크
 
     def pop_next(self):
         next = self.next
@@ -24,6 +26,7 @@ class DNode:
                 self.next.prev = self
 
         return next
+
 
 class DblLinkedList:
     def __init__(self):
@@ -110,6 +113,7 @@ class DblLinkedList:
         ret += 'None'
 
         return ret
+
 
 if __name__ == '__main__':
     dl = DblLinkedList()
