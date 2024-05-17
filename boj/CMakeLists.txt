@@ -7,7 +7,11 @@ set(CMAKE_CXX_STANDARD 17)
 #        12015.cpp
 
 add_executable(boj
-#        2618.cpp
+#        13977.cpp
+        #        2162.cpp
+        #        3190.cpp
+        #        15686.cpp
+        #        2618.cpp
         #        28215.cpp
         #        1168.cpp
         #        12899.cpp
